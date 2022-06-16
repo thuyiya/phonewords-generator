@@ -67,12 +67,12 @@ For run the application in develop mode
 ```
 npm run dev
 ```
+To run in production, First run `npm run build` you can build the frontend project
 
 `npm run start` Runs the built app in production mode.
 
 Server on `0.0.0.0:3000`, url: `http://localhost:3000`
 
-using `npm run build` you can build the frontend project, but run the 
 ```
 npm run export
 ```
