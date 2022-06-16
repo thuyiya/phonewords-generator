@@ -1,12 +1,23 @@
 import React, { SyntheticEvent } from "react";
-import InputField from "@kiwicom/orbit-components/lib/InputField";
-import { STRINGS, UI_SIZES } from "app-constants";
+import styled from "styled-components";
+
 import SeatMap from "components/Keyboard/SeatMap";
 import { Alert } from "@kiwicom/orbit-components";
+import Text from "@kiwicom/orbit-components/lib/Text";
+import InputField from "@kiwicom/orbit-components/lib/InputField";
+
+import { inputValiadtion } from "utils/common";
+import { STRINGS, UI_SIZES } from "app-constants";
+
 
 type Props = {
   onChnageText: Function;
 };
+
+const Container = styled.div`
+  width: ${UI_SIZES.KEYBOARD.INPUT_WIDTH}
+`
+
 
 const Keyboard: React.FC<Props> = ({ onChnageText }) => {
   const [text, setText] = React.useState("");
@@ -25,7 +36,7 @@ const Keyboard: React.FC<Props> = ({ onChnageText }) => {
   };
 
   return (
-    <div>
+    <Container>
       <InputField
         value={text}
         id={STRINGS.KEYBOARD.INPUT.ID}
@@ -35,13 +46,16 @@ const Keyboard: React.FC<Props> = ({ onChnageText }) => {
         spaceAfter="small"
         label={STRINGS.KEYBOARD.INPUT.LABEL}
         type={"number"}
-        error={""}
+        error={inputValiadtion(text)}
         onChange={onTypeHandler}
       />
-      <Alert title={null} icon={false} spaceAfter="small">{STRINGS.KEYBOARD.INPUT.HELP}</Alert>
+      <Alert title={null} icon={false} spaceAfter="small">
+        <Text>{STRINGS.KEYBOARD.INPUT.HELP}</Text>
+      </Alert>
       <SeatMap selectFromNumberPad={selectFromNumberPad}/>
-    </div>
+    </Container>
   );
 };
 
 export default Keyboard;
+
