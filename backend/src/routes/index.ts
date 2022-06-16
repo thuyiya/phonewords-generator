@@ -5,6 +5,8 @@ import Config from '../config'
 import { STRINGS } from '../constants';
 import { ERROR_RESPONCE, SUCCESS_RESPONCE } from '../common/messages';
 
+import ConvertorRouter from './convertor';
+
 const appRouter = (router: Router) => {
   router.route("/").get(function (req, res) {
     res.status(200).json(
@@ -15,6 +17,7 @@ const appRouter = (router: Router) => {
   });
 
   // define routes
+  ConvertorRouter(router);
 
   router.use(function (req, res, next) {
     next(ERROR_RESPONCE.notFound({ messgae: STRINGS.MESSAGES.ENDPOINT_NOT_FOUND }));
