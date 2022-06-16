@@ -1,9 +1,15 @@
 # Words Generator From Phonewords
 
+<img src="./screenshots/Screenshot1.png" width="400">
+
 ### Intro
 
 This application provide Node backend and React frontend to generate Phonewords, That converts a given numeric string
 into a list of corresponding words in the style of T9 or Phonewords.
+
+<img src="./screenshots/Screenshot2.png" width="400">
+
+<img src="./screenshots/Screenshot3.png" width="400">
 
 ### Description
 
