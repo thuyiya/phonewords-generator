@@ -43,7 +43,7 @@ docker-compose down
 **Let's build, test and deploy system as each**
 
 
-### Frontend
+## Frontend
 
 #### Third party libraries
 
@@ -72,13 +72,24 @@ npm run export
 ```
 for build and export the build file to `out` directory
 
-Use the  
+Use the for see all the tests
 ```
 npm run test
 ```
-for see all the tests
+#### For build and run via docker image
 
-### Backend
+Build the image
+```
+docker build . -t fronend
+```
+To run and forward the port
+```
+docker run -d -p 3000:80 fronend
+```
+For stop the docker container  `docker stop <CONTAINER ID>`, Try `docker ps` to find your container id
+
+---- 
+## Backend
 
 #### Third party libraries
 
@@ -86,6 +97,7 @@ for see all the tests
 - ExpressJS (4.18.1)
 - Typescript (4.7.3)
 - Mocha, Chai and Supertest
+- Nginx
 
 Frist of all you have to install packages 
 ```
@@ -108,8 +120,7 @@ Use the for see all the tests
 npm run test
 ```
 
------
-For build and run via docker image
+#### For build and run via docker image
 Build the image
 ```
 docker build . -t backend
@@ -119,9 +130,6 @@ To run and forward the port
 docker run -d -p 8000:8000 backend
 ```
 For stop the docker container  `docker stop <CONTAINER ID>`, Try `docker ps` to find your container id
-
------
-
 
 #### Developer Tools And Env
 
