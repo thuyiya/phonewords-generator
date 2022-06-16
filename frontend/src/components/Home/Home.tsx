@@ -1,11 +1,16 @@
+import React from "react";
 import type { NextPage } from "next";
-import Head from "next/head";
+import Text from "@kiwicom/orbit-components/lib/Text";
+import MainLayout from "components/MainLayout/MainLayout";
+import Page from "components/Page/Page";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1>Welcome</h1>
-    </div>
+    <Page title={"Home"}>
+      <MainLayout>
+          <Text>Welcome</Text>
+      </MainLayout>
+    </Page>
   );
 };
 
