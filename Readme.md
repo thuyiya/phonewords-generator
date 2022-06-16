@@ -59,7 +59,7 @@ docker-compose down
 - Typescript (4.7.3)
 - Jest and React Testing Library (13.3.0)
 
-Frist of all you have to install packages 
+Frist of all you have to install packages, And for change backend base_url `frontend/src/config/index.ts`
 ```
 npm install 
 ```
@@ -74,6 +74,7 @@ To run in production, First run `npm run build` you can build the frontend proje
 Server on `0.0.0.0:3000`, url: `http://localhost:3000`
 
 ```
+
 npm run export
 ```
 for build and export the build file to `out` directory
